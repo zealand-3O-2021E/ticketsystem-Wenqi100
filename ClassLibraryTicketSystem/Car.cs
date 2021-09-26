@@ -23,6 +23,14 @@ namespace ClassLibraryTicketSystem
         }
 
         /// <summary>
+        /// public constructor Car with arguments bool isBrobizzEnabled
+        /// </summary>
+        public Car(bool isBrobizzEnabled) : base(isBrobizzEnabled)
+        {      
+            
+        }
+
+        /// <summary>
         /// method 
         /// public double Price() 
         /// </summary>
@@ -31,6 +39,8 @@ namespace ClassLibraryTicketSystem
         {
             return 240;
         }
+
+
 
         /// <summary>
         /// method

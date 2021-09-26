@@ -27,6 +27,14 @@ namespace ClassLibraryTicketSystem
         }
 
         /// <summary>
+        /// public constructor MC with arguments bool isBrobizzEnabled
+        /// </summary>
+        public MC(bool isBrobizzEnabled) : base(isBrobizzEnabled)
+        {
+
+        }
+
+        /// <summary>
         /// method 
         /// public double Price() 
         /// </summary>

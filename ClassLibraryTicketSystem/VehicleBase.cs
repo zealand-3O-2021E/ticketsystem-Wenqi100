@@ -15,7 +15,7 @@ namespace ClassLibraryTicketSystem
         /// </summary>
 
         // protected class members can be inherited by child class
-        protected string Licenseplate 
+        protected string Licenseplate
         {
             get => Licenseplate;
             set
@@ -30,11 +30,27 @@ namespace ClassLibraryTicketSystem
         protected DateTime Date { get; set; }
 
         /// <summary>
-        /// public constructor VehicleBase 
+        /// protected bool field, isBrobizzEnabled;
+        /// default value is false
+        /// </summary>
+        protected readonly bool _isBrobizzEnabled;  // default value = false
+
+
+        /// <summary>
+        /// public constructor VehicleBase with no arguments
         /// </summary>
         public VehicleBase()
         {
 
+        }
+
+        /// <summary>
+        /// public constructor VehicleBase with arguments bool isBrobizzEnabled
+        /// default value is false
+        /// </summary>
+        public VehicleBase(bool isBrobizzEnabled)
+        {
+            this._isBrobizzEnabled = isBrobizzEnabled;
         }
 
         /// <summary>
@@ -53,6 +69,28 @@ namespace ClassLibraryTicketSystem
         public bool IsLengthCorrect(string licenseplate)
         {
             return licenseplate.Length <=7? true : false;             
+        }
+
+        public bool IsBrobizzUsed()
+        {
+            return _isBrobizzEnabled;
+        }
+
+        /// <summary>
+        /// method
+        /// public double GetPriceByBrobizz(double discount) 
+        /// </summary>
+        /// <returns>double priceWithBrobizz</returns>
+        public double GetPriceByBrobizz(double discount)
+        {
+            if (IsBrobizzUsed() == true)
+            {
+                discount = 5.0 / 100;
+                double priceWithBrobizz = Price() * (1.0 - discount);
+                return priceWithBrobizz;
+            }
+
+            return Price();            
         }
     }
 }
