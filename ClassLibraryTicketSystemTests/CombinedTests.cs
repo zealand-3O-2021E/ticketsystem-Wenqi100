@@ -43,6 +43,7 @@ namespace ClassLibraryTicketSystemTests
         }
 
         // Test3 of Task5: IsLengthCorrect(string licenseplate) method
+        //*** Don't know it is correct or not!
         [DataTestMethod]
         [DynamicData(nameof(When_Call_IsLengthCorrect_Return_TrueOrFalse), DynamicDataSourceType.Method)]
         public void LengthMethod_ForEachVehicle(VehicleBase vehicleBase, bool expectedValue)

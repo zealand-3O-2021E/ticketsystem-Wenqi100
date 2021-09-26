@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibraryTicketSystem</name>
+    </assembly>
+    <members>
+        <member name="M:ClassLibraryTicketSystem.Car.#ctor">
+            <summary>
+            public constructor Car 
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.Car.#ctor(System.Boolean)">
+            <summary>
+            public constructor Car with arguments bool isBrobizzEnabled
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.Car.Price">
+            <summary>
+            method 
+            public double Price() 
+            </summary>
+            <returns>double Price() = 240 as fixed price</returns>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.Car.VehicleType">
+            <summary>
+            method
+            public string VehicleType() 
+            </summary>
+            <returns>"Car"</returns>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.MC.#ctor">
+            <summary>
+            public constructor MC 
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.MC.#ctor(System.Boolean)">
+            <summary>
+            public constructor MC with arguments bool isBrobizzEnabled
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.MC.Price">
+            <summary>
+            method 
+            public double Price() 
+            </summary>
+            <returns>double Price() = 125 as fixed price</returns>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.MC.VehicleType">
+            <summary>
+            method
+            public string VehicleType() 
+            </summary>
+            <returns>"MC"</returns>
+        </member>
+        <member name="P:ClassLibraryTicketSystem.VehicleBase.Licenseplate">
+            <summary>
+            a class “VehicleBase”, which has the following properties:
+            public string Licenseplate
+            public DateTime Date
+            </summary>
+        </member>
+        <member name="F:ClassLibraryTicketSystem.VehicleBase._isBrobizzEnabled">
+            <summary>
+            protected bool field, isBrobizzEnabled;
+            default value is false
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.VehicleBase.#ctor">
+            <summary>
+            public constructor VehicleBase with no arguments
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.VehicleBase.#ctor(System.String)">
+            <summary>
+            public constructor VehicleBase with arguments string plate
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.VehicleBase.#ctor(System.Boolean)">
+            <summary>
+            public constructor VehicleBase with arguments bool isBrobizzEnabled
+            default value is false
+            </summary>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.VehicleBase.Price">
+            <summary>
+            method 
+            public abstract double Price() 
+            </summary>
+            <returns>double Price</returns>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.VehicleBase.VehicleType">
+            <summary>
+            method
+            public abstract string VehicleType() 
+            </summary>
+            <returns>string VehicleType</returns>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.VehicleBase.IsBrobizzUsed">
+            <summary>
+            method
+            public bool IsBrobizzUsed() 
+            </summary>
+            <returns>bool _isBrobizzEnabled</returns>
+        </member>
+        <member name="M:ClassLibraryTicketSystem.VehicleBase.GetPriceByBrobizz(System.Double)">
+            <summary>
+            method
+            public double GetPriceByBrobizz(double discount) 
+            </summary>
+            <returns>double priceWithBrobizz</returns>
+        </member>
+    </members>
+</doc>
