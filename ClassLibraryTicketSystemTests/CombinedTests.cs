@@ -12,7 +12,7 @@ namespace ClassLibraryTicketSystemTests
     [TestClass]
     public class CombinedTests
     {
-        // Test of Price() method
+        // Test1: Price() method
         [DataTestMethod]
         [DynamicData(nameof(When_Call_PriceMethod_ReturnFixedValue), DynamicDataSourceType.Method)]
         public void PriceMethod_ForEachVehicle(VehicleBase vehicleBase, double expectedValue)
@@ -27,7 +27,7 @@ namespace ClassLibraryTicketSystemTests
             yield return new object[] { new MC(), 125 };
         }
 
-        // Test of VehicleType() method
+        // Test2: VehicleType() method
         [DataTestMethod]
         [DynamicData(nameof(When_Call_VehicleTypeMethod_ReturnVehicleType), DynamicDataSourceType.Method)]
         public void VehicleTypeMethod_ForEachVehicle(VehicleBase vehicleBase, string expectedValue)
@@ -42,7 +42,7 @@ namespace ClassLibraryTicketSystemTests
             yield return new object[] { new MC(), "MC" };
         }
 
-        // Test of GetPriceByBrobizz(double discount) method
+        // Test3: GetPriceByBrobizz(double discount) method
         [DataTestMethod]
         [DynamicData(nameof(When_Call_GetPrice_ByBrobizz_Return_Price), DynamicDataSourceType.Method)]
         public void PriceMethod_ByBrobizz_ForEachVehicle(VehicleBase vehicleBase, double expectedValue)
@@ -57,28 +57,21 @@ namespace ClassLibraryTicketSystemTests
             yield return new object[] { new MC(false), 125 };
         }
 
-        
-        
 
-        // Test of IsLengthCorrect(string licenseplate) method
-        /*
+        // Test4: IsLengthCorrect(string licenseplate) method
         [DataTestMethod]
-        [DynamicData(nameof(LengthMethodTestData), DynamicDataSourceType.Method)]
-        public void LengthMethodTestData(VehicleBase vehicleBase, bool expectedValue)
+        [DynamicData(nameof(When_Call_IsLengthCorrect_Return_TrueOrFalse), DynamicDataSourceType.Method)]
+        public void LengthMethod_ForEachVehicle(VehicleBase vehicleBase, bool expectedValue)
         {
-            
-            var actual = vehicleBase.IsLengthCorrect();
+            var actual = vehicleBase.IsLengthCorrect(vehicleBase.Licenseplate);
             Assert.AreEqual(expectedValue, actual);
         }
 
-        public static IEnumerable<object[]> LengthMethodTestData()
+        public static IEnumerable<object[]> When_Call_IsLengthCorrect_Return_TrueOrFalse()
         {
-            yield return new object[] { new Car(),  };
-            yield return new object[] { new MC(), 125 };
+            yield return new object[] { new Car("DK123456"), false};
+            yield return new object[] { new Car("12345"), false };
+            yield return new object[] { new MC("1234567"), true};
         }
-        */
-
-
-
     }
 }

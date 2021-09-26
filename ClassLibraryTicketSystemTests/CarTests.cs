@@ -11,6 +11,7 @@ using System.Runtime.ConstrainedExecution;
 
 namespace ClassLibraryTicketSystem.Tests
 {
+    /*
     [TestClass()]
     public class CarTests
     {
@@ -50,4 +51,5 @@ namespace ClassLibraryTicketSystem.Tests
             Assert.AreEqual("Car", actual);
         }
     }
+    */
 }

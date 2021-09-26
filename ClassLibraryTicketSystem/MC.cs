@@ -23,7 +23,6 @@ namespace ClassLibraryTicketSystem
         /// </summary>
         public MC()
         {
-
         }
 
         /// <summary>
@@ -31,7 +30,10 @@ namespace ClassLibraryTicketSystem
         /// </summary>
         public MC(bool isBrobizzEnabled) : base(isBrobizzEnabled)
         {
+        }
 
+        public MC(string plate) : base(plate)
+        {
         }
 
         /// <summary>

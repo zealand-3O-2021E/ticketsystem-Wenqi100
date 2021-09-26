@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassLibraryTicketSystem.Tests
-{
+{/*
     [TestClass()]
     public class MCTests
     {
@@ -42,4 +42,5 @@ namespace ClassLibraryTicketSystem.Tests
             Assert.AreEqual("MC", actual);
         }
     }
+    */
 }

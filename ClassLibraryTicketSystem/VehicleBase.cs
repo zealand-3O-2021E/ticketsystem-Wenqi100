@@ -14,8 +14,8 @@ namespace ClassLibraryTicketSystem
         /// public DateTime Date
         /// </summary>
 
-        // protected class members can be inherited by child class
-        protected string Licenseplate
+        // protected class members can be inherited by child class, but can't be see in the test project
+        public string Licenseplate
         {
             get => Licenseplate;
             set
@@ -27,13 +27,13 @@ namespace ClassLibraryTicketSystem
                 Licenseplate = value;
             }
         }
-        protected DateTime Date { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// protected bool field, isBrobizzEnabled;
         /// default value is false
         /// </summary>
-        protected readonly bool _isBrobizzEnabled;  // default value = false
+        public readonly bool _isBrobizzEnabled;  // default value = false
 
 
         /// <summary>
@@ -42,6 +42,15 @@ namespace ClassLibraryTicketSystem
         public VehicleBase()
         {
 
+        }
+
+
+        /// <summary>
+        /// public constructor VehicleBase with arguments string plate
+        /// </summary>
+        public VehicleBase(string plate)
+        {
+            this.Licenseplate = plate;
         }
 
         /// <summary>
@@ -70,6 +79,12 @@ namespace ClassLibraryTicketSystem
         {
             return licenseplate.Length <=7? true : false;             
         }
+
+        /// <summary>
+        /// method
+        /// public bool IsBrobizzUsed() 
+        /// </summary>
+        /// <returns>bool _isBrobizzEnabled</returns>
 
         public bool IsBrobizzUsed()
         {

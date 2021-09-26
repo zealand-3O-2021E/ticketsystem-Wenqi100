@@ -19,15 +19,17 @@ namespace ClassLibraryTicketSystem
         /// </summary>
         public Car()
         {
-
         }
 
         /// <summary>
         /// public constructor Car with arguments bool isBrobizzEnabled
         /// </summary>
         public Car(bool isBrobizzEnabled) : base(isBrobizzEnabled)
-        {      
-            
+        {  
+        }
+
+        public Car(string plate) : base(plate)
+        {
         }
 
         /// <summary>
@@ -39,8 +41,6 @@ namespace ClassLibraryTicketSystem
         {
             return 240;
         }
-
-
 
         /// <summary>
         /// method
