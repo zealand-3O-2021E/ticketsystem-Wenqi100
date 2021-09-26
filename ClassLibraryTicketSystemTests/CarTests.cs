@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Moq;
-using ClassLibraryTicketSystem;
 using System.Runtime.ConstrainedExecution;
 
 namespace ClassLibraryTicketSystem.Tests

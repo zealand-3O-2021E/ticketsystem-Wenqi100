@@ -15,7 +15,18 @@ namespace ClassLibraryTicketSystem
         /// </summary>
 
         // protected class members can be inherited by child class
-        protected string Licenseplate { get; set; }
+        protected string Licenseplate 
+        {
+            get => Licenseplate;
+            set
+            {
+                if (!IsLengthCorrect(Licenseplate))
+                {
+                    throw new ArgumentException("The length of Licenseplate can not longer than 7.");
+                }
+                Licenseplate = value;
+            }
+        }
         protected DateTime Date { get; set; }
 
         /// <summary>
@@ -39,5 +50,9 @@ namespace ClassLibraryTicketSystem
         /// </summary>
         /// <returns>string VehicleType</returns>
         public abstract string VehicleType();
+        public bool IsLengthCorrect(string licenseplate)
+        {
+            return licenseplate.Length <=7? true : false;             
+        }
     }
 }
