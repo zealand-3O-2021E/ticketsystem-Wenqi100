@@ -12,7 +12,7 @@ namespace ClassLibraryTicketSystemTests
     [TestClass]
     public class CombinedTests
     {
-        // Test1: Price() method
+        // Test1 of Task2+3+4: Price() method
         [DataTestMethod]
         [DynamicData(nameof(When_Call_PriceMethod_ReturnFixedValue), DynamicDataSourceType.Method)]
         public void PriceMethod_ForEachVehicle(VehicleBase vehicleBase, double expectedValue)
@@ -27,7 +27,7 @@ namespace ClassLibraryTicketSystemTests
             yield return new object[] { new MC(), 125 };
         }
 
-        // Test2: VehicleType() method
+        // Test2 of Task2+3+4: VehicleType() method
         [DataTestMethod]
         [DynamicData(nameof(When_Call_VehicleTypeMethod_ReturnVehicleType), DynamicDataSourceType.Method)]
         public void VehicleTypeMethod_ForEachVehicle(VehicleBase vehicleBase, string expectedValue)
@@ -42,23 +42,7 @@ namespace ClassLibraryTicketSystemTests
             yield return new object[] { new MC(), "MC" };
         }
 
-        // Test3: GetPriceByBrobizz(double discount) method
-        [DataTestMethod]
-        [DynamicData(nameof(When_Call_GetPrice_ByBrobizz_Return_Price), DynamicDataSourceType.Method)]
-        public void PriceMethod_ByBrobizz_ForEachVehicle(VehicleBase vehicleBase, double expectedValue)
-        {
-            var actual = vehicleBase.GetPriceByBrobizz(0.05);
-            Assert.AreEqual(expectedValue, actual);
-        }
-
-        public static IEnumerable<object[]> When_Call_GetPrice_ByBrobizz_Return_Price()
-        {
-            yield return new object[] { new Car(true), 240*(1-0.05)};
-            yield return new object[] { new MC(false), 125 };
-        }
-
-
-        // Test4: IsLengthCorrect(string licenseplate) method
+        // Test3 of Task5: IsLengthCorrect(string licenseplate) method
         [DataTestMethod]
         [DynamicData(nameof(When_Call_IsLengthCorrect_Return_TrueOrFalse), DynamicDataSourceType.Method)]
         public void LengthMethod_ForEachVehicle(VehicleBase vehicleBase, bool expectedValue)
@@ -73,5 +57,21 @@ namespace ClassLibraryTicketSystemTests
             yield return new object[] { new Car("12345"), false };
             yield return new object[] { new MC("1234567"), true};
         }
+
+        // Test4 of Task6: GetPriceByBrobizz(double discount) method
+        [DataTestMethod]
+        [DynamicData(nameof(When_Call_GetPrice_ByBrobizz_Return_Price), DynamicDataSourceType.Method)]
+        public void PriceMethod_ByBrobizz_ForEachVehicle(VehicleBase vehicleBase, double expectedValue)
+        {
+            var actual = vehicleBase.GetPriceByBrobizz(0.05);
+            Assert.AreEqual(expectedValue, actual);
+        }
+
+        public static IEnumerable<object[]> When_Call_GetPrice_ByBrobizz_Return_Price()
+        {
+            yield return new object[] { new Car(true), 240 * (1 - 0.05) };
+            yield return new object[] { new MC(false), 125 };
+        }
+
     }
 }
