@@ -19,11 +19,11 @@ namespace ClassLibraryTicketSystem.Tests
         //Mock mock = new Mock<Car>();       
 
         /// <summary>
-        /// Test Method: WhenCallPriceMethod_Return240
+        /// Test Method: WhenCallPriceMethodOfCar_Return240
         /// </summary>
 
         [TestMethod]
-        public void WhenCallPriceMethod_Return240()
+        public void WhenCallPriceMethodOfCar_Return240()
         {
             // Arrange
             Car car = new Car();
@@ -38,10 +38,10 @@ namespace ClassLibraryTicketSystem.Tests
 
 
         /// <summary>
-        /// Test Method: WhenCallVehicleMethod_ReturnStringCar
+        /// Test Method: WhenCallVehicleMethodOfCar_ReturnStringCar
         /// </summary>
         [TestMethod]
-        public void WhenCallVehicleMethod_ReturnStringCar()
+        public void WhenCallVehicleMethodOfCar_ReturnStringCar()
         {
             // Arrange
             Car car = new Car();
