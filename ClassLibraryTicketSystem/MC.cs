@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTicketSystem
 {
-    public class MC
+    public class MC : VehicleBase
     {
         /// <summary>
         /// a class “MC”, which has the following properties:
         /// public string Licenseplate
         /// public DateTime Date
         /// </summary>
-        public string Licenseplate { get; set; }
-        public DateTime Date { get; set; }
+
+        /// Refactoring: properties have been moved to VehicleBase class
+        //public string Licenseplate { get; set; }
+        //public DateTime Date { get; set; }
 
         /// <summary>
         /// public constructor MC 
@@ -29,7 +31,7 @@ namespace ClassLibraryTicketSystem
         /// public double Price() 
         /// </summary>
         /// <returns>double Price() = 125 as fixed price</returns>
-        public double Price()
+        public override double Price()
         {
             return 125;
         }
@@ -39,7 +41,7 @@ namespace ClassLibraryTicketSystem
         /// public string VehicleType() 
         /// </summary>
         /// <returns>"MC"</returns>
-        public string VehicleType()
+        public override string VehicleType()
         {
             return "MC";
         }
